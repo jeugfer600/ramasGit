@@ -62,4 +62,8 @@ public class Main {
         int b = scanner.nextInt();
         System.out.println("La resta es: " + (a - b));
     }
+
+    public float multiplicar (float a, float b){
+        return a * b;
+    }
 }
