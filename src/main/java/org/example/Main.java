@@ -1,31 +1,17 @@
 package org.example;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.BiFunction;
-
+import java.util.Scanner;
 public class Main {
+
+    private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-
-        Map<String, BiFunction<Integer, Integer, Integer>> menu = new HashMap<>();
-        menu.put("suma", Main::suma);
-        menu.put("resta", Main::resta);
-        menu.put("multiplicacion", Main::multiplicacion);
-
-        int num1 = 5;
-        int num2 = 3;
-        String opcion = "suma"; // Cambie esto para probar diferentes opciones
-
-        BiFunction<Integer, Integer, Integer> operacion = menu.get(opcion);
-        if (operacion != null) {
-            int resultado = operacion.apply(num1, num2);
-            System.out.println("El resultado de la " + opcion + " es: " + resultado);
-        } else {
-            System.out.println("Opción no válida");
-        }
+        System.out.println("Introduce el primer número: ");
+        int a = scanner.nextInt();
+        System.out.println("Introduce el segundo número: ");
+        int b = scanner.nextInt();
+        System.out.println("La resta de " + a + " - " + b + " es: " + resta(a, b));
     }
 
-    public static int suma(int a, int b) {
-        return a + b;
+    public static int resta(int a, int b) {
+        return a - b;
     }
 }
