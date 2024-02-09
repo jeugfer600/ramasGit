@@ -63,7 +63,11 @@ public class Main {
         System.out.println("La resta es: " + (a - b));
     }
 
-    public float multiplicar (float a, float b){
-        return a * b;
+    public static void  multiplicacion (){
+        System.out.println("Ingrese el primer numero");
+        int a = scanner.nextInt();
+        System.out.println("Ingrese el segundo numero");
+        int b = scanner.nextInt();
+        System.out.println("La multiplicacion es: " + (a * b));
     }
 }
