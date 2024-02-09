@@ -2,31 +2,57 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.function.BiFunction;
 
 public class Main {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        Map<String, BiFunction<Integer, Integer, Integer>> menu = new HashMap<>();
-        menu.put("suma", Main::suma);
-        menu.put("resta", Main::resta);
-        menu.put("multiplicacion", Main::multiplicacion);
 
-        int num1 = 5;
-        int num2 = 3;
-        String opcion = "suma"; // Cambie esto para probar diferentes opciones
-
-        BiFunction<Integer, Integer, Integer> operacion = menu.get(opcion);
-        if (operacion != null) {
-            int resultado = operacion.apply(num1, num2);
-            System.out.println("El resultado de la " + opcion + " es: " + resultado);
-        } else {
-            System.out.println("Opción no válida");
-        }
+        int opcion = 0;
+        do {
+            mostrarMenu();
+            opcion = scanner.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Suma");
+                    suma();
+                    break;
+                case 2:
+                    System.out.println("Resta");
+                    resta();
+                    break;
+                case 3:
+                    System.out.println("Multiplicacion");
+                    multiplicacion();
+                    break;
+                case 4:
+                    System.out.println("Salir");
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
+        } while (opcion != 4);
     }
 
-    public static int suma(int a, int b) {
-        return a + b;
+    private static void mostrarMenu() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Menu\n");
+        sb.append("1. suma\n");
+        sb.append("2. resta\n");
+        sb.append("3. multiplicacion\n");
+        sb.append("4. salir\n");
+        System.out.println(sb.toString());
+    }
+
+    private static void suma() {
+        System.out.println("Ingrese el primer numero");
+        int a = scanner.nextInt();
+        System.out.println("Ingrese el segundo numero");
+        int b = scanner.nextInt();
+        System.out.println("La suma es: " + (a + b));
     }
 
     public float multiplicar (float a, float b){
