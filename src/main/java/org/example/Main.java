@@ -54,4 +54,12 @@ public class Main {
         int b = scanner.nextInt();
         System.out.println("La suma es: " + (a + b));
     }
+
+    private static void resta() {
+        System.out.println("Ingrese el primer numero");
+        int a = scanner.nextInt();
+        System.out.println("Ingrese el segundo numero");
+        int b = scanner.nextInt();
+        System.out.println("La resta es: " + (a - b));
+    }
 }
